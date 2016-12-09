@@ -1,6 +1,9 @@
 package pokemon.view;
 
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import javax.swing.*;
@@ -136,7 +139,57 @@ public class PokemonPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseEntered(MouseEvent entered)
+			{
+				//JOptionPane.showMessageDialog
+			}
+			
+			public void mouseExited(MouseEvent exited)
+			{
+				
+			}
+			
+			public void mousePressed(MouseEvent pressed)
+			{
+				
+			}
+			
+			public void mouseReleased(MouseEvent released)
+			{
+				
+			}
+			
+			public void mouseClicked(MouseEvent clicked)
+			{
+				
+			}
+			
+			public void mouseMoved(MouseEvent moved)
+			{
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was clicked!");
+			}
+		});
 		
+		public void setRandomColor()
+		{
+			
+		}
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseDragged(MouseEvent dragged)
+			{
+				//setRandomColor();
+			}
+			
+			public void mouseMoved(MouseEvent moved)
+			{
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "Moving from X:" + moved.getX() + ", Y:" + "moved.getY()");
+			}
+		});
 	}
+	
 	
 }
