@@ -1,4 +1,4 @@
-package pokemon.view;
+package poke.view;
 
 public class Geodude {
 

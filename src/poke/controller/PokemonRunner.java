@@ -1,4 +1,4 @@
-package pokemon.controller;
+package poke.controller;
 
 public class PokemonRunner
 {

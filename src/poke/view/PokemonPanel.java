@@ -1,4 +1,4 @@
-package pokemon.view;
+package poke.view;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -6,8 +6,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+
+import poke.controller.PokemonController;
+
 import javax.swing.*;
-import pokemon.controller.PokemonController;
 
 public class PokemonPanel extends JPanel
 {
@@ -59,7 +61,7 @@ public class PokemonPanel extends JPanel
 		
 		numberField = new JTextField(5);
 		
-		pokemonIcon = new ImageIcon(getClass().getResource("picture/pokeball.png"));
+		pokemonIcon = new ImageIcon(getClass().getResource("/poke/view/picture/pokeball.png"));
 		pokemonLabel = new JLabel(pokemonIcon, SwingConstants.CENTER);
 		baseLayout.putConstraint(SpringLayout.NORTH, pokemonLabel, 161, SpringLayout.NORTH, combatLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, pokemonLabel, 0, SpringLayout.WEST, pokedexSelector);
@@ -172,10 +174,10 @@ public class PokemonPanel extends JPanel
 			}
 		});
 		
-		public void setRandomColor()
+		/*public  setRandomColor()
 		{
 			
-		}
+		}*/
 		
 		this.addMouseMotionListener(new MouseMotionListener()
 		{
