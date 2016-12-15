@@ -1,4 +1,4 @@
-package poke.view;
+package poke.model;
 
 public class Gyrados {
 

@@ -1,6 +1,6 @@
 package poke.model;
 
-public class Pokemon 
+public abstract class Pokemon 
 {
 
 }
