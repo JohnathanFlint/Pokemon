@@ -1,5 +1,8 @@
 package poke.model;
 
-public class Dragon {
-
+public interface Dragon 
+{
+	public void dragonRage();
+	
+	public void twister();
 }
