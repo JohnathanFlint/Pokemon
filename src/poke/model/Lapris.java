@@ -1,5 +1,6 @@
 package poke.model;
 
-public class Lapris {
+public class Lapris extends Pokemon implements Water
+{
 
 }

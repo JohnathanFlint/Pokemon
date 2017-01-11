@@ -37,38 +37,35 @@ public class PokemonPanel extends JPanel
 		super();
 		this.baseController = baseController;
 		
-		baseLayout = new SpringLayout();
-		advancedArea = new JTextArea(5, 25);
+		this.baseLayout = new SpringLayout();
+		this.advancedArea = new JTextArea(5, 25);
 		
-		updateButton = new JButton("Update Stats");
+		this.updateButton = new JButton("Update Stats");
 		
-		pokedexSelector = new JComboBox(baseController.getPokemon());
-		baseLayout.putConstraint(SpringLayout.WEST, pokedexSelector, 10, SpringLayout.WEST, this);
-		healthLabel = new JLabel("Health");
-		combatLabel = new JLabel("Combat Points");		
-		speedLabel = new JLabel("Speed");		
-		numberLabel = new JLabel("Number");
+		this.pokedexSelector = new JComboBox();
 		
-		advancedLabel = new JLabel("Types");
+		this.healthLabel = new JLabel("Health");
+		this.combatLabel = new JLabel("Combat Points");		
+		this.speedLabel = new JLabel("Speed");		
+		this.numberLabel = new JLabel("Number");
 		
-		healthField = new JTextField(5);
+		this.advancedLabel = new JLabel("Advanced Infromation");
 		
-		combatField = new JTextField(5);
+		this.healthField = new JTextField(5);
 		
-		speedField = new JTextField(5);
+		this.combatField = new JTextField(5);
 		
-		nameField = new JTextField(5);
+		this.speedField = new JTextField(5);
 		
-		numberField = new JTextField(5);
+		this.nameField = new JTextField(5);
 		
-		pokemonIcon = new ImageIcon(getClass().getResource("/poke/view/picture/pokeball.png"));
-		pokemonLabel = new JLabel(pokemonIcon, SwingConstants.CENTER);
-		baseLayout.putConstraint(SpringLayout.NORTH, pokemonLabel, 161, SpringLayout.NORTH, combatLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, pokemonLabel, 0, SpringLayout.WEST, pokedexSelector);
-		baseLayout.putConstraint(SpringLayout.SOUTH, pokemonLabel, 0, SpringLayout.SOUTH, advancedArea);
-		baseLayout.putConstraint(SpringLayout.EAST, pokemonLabel, 276, SpringLayout.WEST, pokedexSelector);
+		this.numberField = new JTextField(5);
 		
-		nameLabel = new JLabel("Name");
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/poke/view/picture/pokeball.png"));
+		this.pokemonLabel = new JLabel(pokemonIcon, SwingConstants.CENTER);
+	
+		
+		this.nameLabel = new JLabel("Name");
 		
 		
 		setupAdvancedArea();
@@ -137,6 +134,11 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, combatField, 0, SpringLayout.WEST, healthField);
 		baseLayout.putConstraint(SpringLayout.NORTH, healthLabel, 6, SpringLayout.NORTH, healthField);
 		baseLayout.putConstraint(SpringLayout.EAST, healthField, 0, SpringLayout.EAST, advancedArea);
+		baseLayout.putConstraint(SpringLayout.WEST, pokedexSelector, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, pokemonLabel, 161, SpringLayout.NORTH, combatLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, pokemonLabel, 0, SpringLayout.WEST, pokedexSelector);
+		baseLayout.putConstraint(SpringLayout.SOUTH, pokemonLabel, 0, SpringLayout.SOUTH, advancedArea);
+		baseLayout.putConstraint(SpringLayout.EAST, pokemonLabel, 276, SpringLayout.WEST, pokedexSelector);
 	}
 	
 	private void setupListeners()

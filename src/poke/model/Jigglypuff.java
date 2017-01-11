@@ -1,5 +1,6 @@
 package poke.model;
 
-public class Jigglypuff {
+public class Jigglypuff extends Pokemon implements Fairy
+{
 
 }
