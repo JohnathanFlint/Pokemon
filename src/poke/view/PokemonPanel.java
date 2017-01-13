@@ -2,8 +2,7 @@ package poke.view;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import java.util.Random;
@@ -142,6 +141,8 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, pokemonLabel, 276, SpringLayout.WEST, pokedexSelector);
 	}
 	
+	private boolean
+	
 	private void setupListeners()
 	{
 		pokedexSelector.addActionListener(new ActionListener()
@@ -153,6 +154,19 @@ public class PokemonPanel extends JPanel
 				nameField.setText(baseController.getPokedex().get(selected).getName());
 			}
 		});
+		
+		updateButton.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent selection)
+					{
+						if(isValidName(nameField.getText()) && isValidInteger(combatField.getText()) && isValidInteger(healthField.getText()) && isValidDouble(speedField.getText()))
+						{
+							int selected = pokedexSelector.getSelectedIndex();
+							
+							baseController.updateSelected(selected,  nameField.getText(), Integer.parseInt(combatField.getText()), Integer.parseInt(healthField.getText()), Double.parseDouble(speedField.getText()));
+						}
+					}
+				});
 		
 		this.addMouseListener(new MouseListener()
 		{
