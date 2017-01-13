@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+import java.util.Random;
 
 import poke.controller.PokemonController;
 
@@ -143,21 +144,32 @@ public class PokemonPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		pokedexSelector.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				int selected = pokedexSelector.getSelectedIndex();
+				
+				nameField.setText(baseController.getPokedex().get(selected).getName());
+			}
+		});
+		
 		this.addMouseListener(new MouseListener()
 		{
+		
 			public void mouseEntered(MouseEvent entered)
 			{
-				//JOptionPane.showMessageDialog
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is in!");
 			}
 			
 			public void mouseExited(MouseEvent exited)
 			{
-				
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is out!");
 			}
 			
 			public void mousePressed(MouseEvent pressed)
 			{
-				
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was pressed!");
 			}
 			
 			public void mouseReleased(MouseEvent released)
@@ -190,9 +202,39 @@ public class PokemonPanel extends JPanel
 			
 			public void mouseMoved(MouseEvent moved)
 			{
-				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "Moving from X:" + moved.getX() + ", Y:" + "moved.getY()");
-			}
+				JOptionPane.showMessageDialog(baseController.getBaseFrame(), "Moving from " + moved.getX() + " Y: " + moved.getY());			}
 		});
+	}
+	
+	private void changeColorBasedOnData(String data)
+	{
+		if(data.contains("Fairy"))
+		{
+			this.setBackground(Color.PINK);
+		}
+		else if(data.contains("Water"))
+		{
+			this.setBackground(Color.blue);
+		}
+		else if(data.contains("Rock"))
+		{
+			this.setBackground(Color.gray);
+			
+		}
+		else if(data.contains("Dragon"))
+		{
+			this.setBackground(Color.black);
+		}
+		else
+		{
+			this.setBackground(Color.DARK_GRAY);
+		}
+	}
+	
+	private void setRandomColor()
+	{
+		Random rand = new Random();
+		this.setBackground(new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255)));
 	}
 	
 	
