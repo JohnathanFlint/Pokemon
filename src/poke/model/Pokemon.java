@@ -8,7 +8,7 @@ public abstract class Pokemon
 	private String name;
 	private double speed;
 	
-	public Pokemon()
+	public Pokemon(String name, int number)
 	{
 		this.name = name;
 		this.number = number;
@@ -35,6 +35,13 @@ public abstract class Pokemon
 		}
 		
 		return pokemonTypes;
+	}
+	
+	public String getPokemonInformation()
+	{
+		String pokemonInfo = "This pokemon is of type: " + this.getClass().getSimpleName();
+		
+		return pokemonInfo;
 	}
 
 	public int getHealthPoints()
