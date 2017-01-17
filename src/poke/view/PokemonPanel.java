@@ -141,7 +141,48 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, pokemonLabel, 276, SpringLayout.WEST, pokedexSelector);
 	}
 	
-	private boolean
+	private boolean isValidDouble(String input)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			double successful = Double.parseDouble(input);
+			isValid = true;
+		}
+		catch (NumberFormatException userTypedSomething)
+		{
+			JOptionPane.showMessageDialog(this, "Type a valid double for Speed.");
+			speedField.setText("");
+		}
+		
+		return isValid;
+	}
+	
+	private boolean isValidInteger(String input)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			int successful = Integer.parseInt(input);
+			isValid = true;
+		}
+		catch (NumberFormatException userTypedSomething)
+		{
+			JOptionPane.showMessageDialog(this, "Type a valid int for Speed.");
+			speedField.setText("");
+		}
+		
+		return isValid;
+	}
+	
+	private boolean isValidName(String input)
+	{
+		boolean isValid = false;
+		
+		
+	}
 	
 	private void setupListeners()
 	{
